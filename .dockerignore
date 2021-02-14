@@ -1,0 +1,8 @@
+.git
+.idea
+database/
+imagedir/
+target/
+.gitignore
+inventory-api.iml
+README.md

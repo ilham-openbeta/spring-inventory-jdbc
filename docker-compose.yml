@@ -1,0 +1,23 @@
+version: '3'
+services:
+  backend:
+    build: .
+    image: "ilham/inventory-api:version1.0"
+    environment: 
+      - DB_HOST=db
+      - DB_NAME=inventory
+      - DB_USER=root
+      - DB_PASS=P@ssw0rd
+    ports:
+      - "8080:8080"
+  db:
+    build: ./database
+    image: "ilham/inventory-database:version1.0"
+    restart: always
+    environment: 
+      MYSQL_DATABASE: 'inventory'
+      MYSQL_ROOT_PASSWORD: 'P@ssw0rd'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'

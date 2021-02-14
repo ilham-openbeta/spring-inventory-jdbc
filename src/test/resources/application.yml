@@ -1,0 +1,13 @@
+application.data-dir: imagedir/
+server.port: 8080
+spring:
+  datasource:
+    url: jdbc:h2:mem:inventory
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  messages.basename: i18n/messages
+  servlet:
+    multipart:
+      max-file-size: 1MB
+      max-request-size: 1MB
